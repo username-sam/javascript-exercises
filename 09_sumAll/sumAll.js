@@ -3,14 +3,15 @@ const sumAll = function(first,second) {
     let end  = second
     let sum = 0;
 
-    if(first <= 0 || second <= 0){
-        return sum = 'ERROR'
-    }else if(isNaN(first) || isNaN(second)){
-        return sum = 'ERROR'
-    }
-    if (second < first){
-       start = second
-       end = first
+    if(typeof first !== 'number' || typeof second !== "number"){
+        return sum = "ERROR"
+    }else if(first < 0 || second < 0){
+        return sum = "ERROR"
+    }else if(first % 1 !== 0 || second % 1 !== 0){
+        return sum = "ERROR"
+    }else if(second < first){
+        start = second;
+        end = first;
     }
     
     for(let i = start; i <= end ; i ++){
